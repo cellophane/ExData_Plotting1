@@ -9,7 +9,10 @@ dateTime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 png("plot4.png")
 with(data,{
      par(mfrow=c(2,2))
-     plot(dateTime,Global_active_power,t='l')
+     plot(dateTime,data$Global_active_power,
+          xlab = "",
+          ylab = "Global Active Power (kilowatts)", 
+          main = "",t="l")
      plot(dateTime,Voltage,t='l')
      plot(dateTime,Sub_metering_1,t='l',
           ylab="Energy sub metering", xlab="")
